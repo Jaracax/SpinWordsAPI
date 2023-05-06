@@ -17,12 +17,20 @@ The roadmap for this project will consist in:
     + Git
     - Databases
 
-## Folder Structure
+## Package Structure
 This project has the following folders
-* Example
-* Example
+#### com.example.SpinWordsApi
+This is the main folder where is application main method and all its sub-packages
+#### SpinWordsController
+This is where the application controller is together with the java logic that reverses the words.
+#### SentenceRequest
+Here there's a class created to handle serialization and ensure the good functionality of the app
 
+---
+---
+---
 # ReadME Español
+---
 
 # SpinWordsAPI
 La API de SpinWords toma un valor de tipo String e invierte cada palabra si dicha palabra tiene cinco o más caracteres.
@@ -43,7 +51,11 @@ El desarrollo de este proyecto consistirá en:
     + Git
     - Base de datos
 
-## Estructura de carpetas
-Este proyecto contiene las siguientes carpetas
-* Example
-* Example 
+## Estructura de Paquetes
+Este proyecto contiene los siguientes paquetes
+#### com.example.SpinWordsApi
+Esta es el paquete principal donde se encuentra el método principal "main method" de la aplicación y todos sus sub-paquetes.
+#### SpinWordsController
+Aquí es donde está el controlador de la aplicación junto con la lógica de Java que invierte las palabras.
+#### SentenceRequest
+Aquí hay una clase creada para manejar la serialización y asegurar la buena funcionalidad de la aplicación.
