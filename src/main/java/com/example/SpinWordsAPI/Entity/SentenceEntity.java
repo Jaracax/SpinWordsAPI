@@ -16,11 +16,23 @@ public class SentenceEntity {
     @Column(name = "reversed_sentence")
     private String reversedSentence;
 
+    @Transient
+    private Integer length;
+
     public SentenceEntity() {
     }
 
-    public SentenceEntity(String originalSentence) {
+    public SentenceEntity(String originalSentence, int length) {
         this.originalSentence = originalSentence;
+        this.length = length;
+    }
+
+    public Integer getLength() {
+        return length;
+    }
+
+    public void setLength(int length) {
+        this.length = length;
     }
 
     public int getId() {
@@ -53,6 +65,7 @@ public class SentenceEntity {
                 "id=" + id +
                 ", originalSentence='" + originalSentence + '\'' +
                 ", reversedSentence='" + reversedSentence + '\'' +
+                ", length=" + length +
                 '}';
     }
 }

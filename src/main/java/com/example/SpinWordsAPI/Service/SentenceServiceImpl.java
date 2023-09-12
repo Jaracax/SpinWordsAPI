@@ -15,14 +15,27 @@ public class SentenceServiceImpl implements SentenceService{
 
     @Override
     public SentenceEntity reverseSentence(String originalSentence) {
+        logicOfReversing(originalSentence,5);
+        return saveSentence(originalSentence, logicOfReversing(originalSentence,5));
+    }
+
+    @Override
+    public SentenceEntity reverseSentenceEnhanced(String originalSentence, int length) {
+        logicOfReversing(originalSentence,length);
+        return saveSentence(originalSentence,logicOfReversing(originalSentence,length));
+    }
+
+    public String logicOfReversing(String originalSentence, int length){
         String[] words = originalSentence.split("\\s");
         for (int i=0; i<words.length; i++) {
-            if (words[i].length() >= 5) {
+            if (words[i].length() >= length) {
                 words[i] = new StringBuilder(words[i]).reverse().toString();
             }
         }
-        String reversedSentence = String.join(" ", words);
+        return String.join(" ", words);
+    }
 
+    public SentenceEntity saveSentence(String originalSentence, String reversedSentence) {
         SentenceEntity sentenceEntity = new SentenceEntity();
         sentenceEntity.setOriginalSentence(originalSentence);
         sentenceEntity.setReversedSentence(reversedSentence);
