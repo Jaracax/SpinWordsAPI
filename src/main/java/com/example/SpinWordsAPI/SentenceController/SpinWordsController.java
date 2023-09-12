@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 public class SpinWordsController {
@@ -44,5 +45,24 @@ public class SpinWordsController {
         return sentenceRepository.findByOriginalSentenceLengthGreaterThan(length);
     }
 
+    @GetMapping("/sentences")
+    public List<SentenceEntity> findAllSentences(){
+        return sentenceRepository.findAll();
+    }
+
+    @DeleteMapping("sentences/{sentenceId}")
+    public String deleteSentence(@PathVariable Integer sentenceId) {
+
+        Optional<SentenceEntity> tempSentence = sentenceRepository.findById(sentenceId);
+
+        if (sentenceId == null){
+            throw new RuntimeException("Employee id not found: " + sentenceId);
+        }
+
+        sentenceRepository.deleteById(sentenceId);
+
+        return "Deleted sentence id: " + sentenceId + "\nwith the information " + tempSentence;
+
+    }
 
 }
