@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class SentenceServiceImpl implements SentenceService{
+public class SentenceServiceImpl implements SentenceService {
     private final SentenceRepository sentenceRepository;
 
     @Autowired
@@ -15,19 +15,19 @@ public class SentenceServiceImpl implements SentenceService{
 
     @Override
     public SentenceEntity reverseSentence(String originalSentence) {
-        logicOfReversing(originalSentence,5);
-        return saveSentence(originalSentence, logicOfReversing(originalSentence,5));
+        logicOfReversing(originalSentence, 5);
+        return saveSentence(originalSentence, logicOfReversing(originalSentence, 5));
     }
 
     @Override
     public SentenceEntity reverseSentenceEnhanced(String originalSentence, int length) {
-        logicOfReversing(originalSentence,length);
-        return saveSentence(originalSentence,logicOfReversing(originalSentence,length));
+        logicOfReversing(originalSentence, length);
+        return saveSentence(originalSentence, logicOfReversing(originalSentence, length));
     }
 
-    public String logicOfReversing(String originalSentence, int length){
+    public String logicOfReversing(String originalSentence, int length) {
         String[] words = originalSentence.split("\\s");
-        for (int i=0; i<words.length; i++) {
+        for (int i = 0; i < words.length; i++) {
             if (words[i].length() >= length) {
                 words[i] = new StringBuilder(words[i]).reverse().toString();
             }
