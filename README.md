@@ -15,7 +15,7 @@ The roadmap for this project will consist in:
 
 ## Purpose of this project
 
-+ To showcase my knowledge and abilities in the following technologies:
++ The main purpose of this project is to showcase my knowledge and abilities in the following technologies:
     + Java
     - SpringBoot
     + Git
@@ -34,7 +34,7 @@ Here we'll find the "SentenceEntity" class which represents an entity in a datab
 #### SentenceController
 Here is the "SpinWordsController" which handles the HTTP methods.
 #### Service
-Here we will find two interfaces "SentenceRepository", "SentenceService" and "SentenceServiceImpl".
+Here we will find two interfaces "SentenceRepository", "SentenceService" and one class "SentenceServiceImpl".
 
 ###### SentenceRepository
 This interface extends the JpaRepository interface so we can make use of commun endpoints that Jpa offers, aditionally
